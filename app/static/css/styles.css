@@ -1,0 +1,110 @@
+body {
+    font-family: Arial, sans-serif;
+}
+
+nav {
+    display: flex;
+    justify-content: center;
+    background-color: #ffffff00; /* Transparent background for navigation */
+    padding: 10px 0;
+}
+
+.nav-tabs {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    gap: 20px; /* Space between tabs */
+}
+
+.nav-tabs li {
+    display: inline;
+}
+
+.nav-tabs a {
+    text-decoration: none;
+    color: #3760e8; /* Tab text color */
+    font-size: 18px; /* Font size for tabs */
+    font-weight: bold;
+    padding: 10px 20px;
+    border-radius: 5px; /* Rounded corners */
+    transition: all 0.3s ease; /* Smooth transition */
+    display: block;
+    background-color: #fad7d7; /* Background color for tabs */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for tabs */
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-tabs a::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.2) 20%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.2) 80%);
+    transition: all 0.5s ease;
+    transform: translate(-50%, -50%);
+    z-index: 0;
+}
+
+.nav-tabs a:hover::before {
+    width: 0;
+    height: 0;
+    transition: all 0.5s ease;
+}
+
+.nav-tabs a:hover,
+.nav-tabs a:focus {
+    text-decoration: underline;
+    color: #7f1717; /* Change color on hover */
+    transform: scale(1.1); /* Slightly larger on hover */
+    background-color: #e0e0e0; /* Light background change on hover */
+}
+
+.nav-tabs a {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for tabs */
+    animation: glow 1.5s infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+    }
+    to {
+        text-shadow: 0 0 20px rgba(255, 105, 180, 0.8);
+    }
+}
+
+/* Scroll-to-top button styles */
+#scrollToTopBtn {
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #62deb3;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+
+/* Section titles colors */
+.profile-header h1 {
+    color: #450b87; /* Example color for the profile header */
+}
+
+.tech-electives h2 {
+    color: #0052f5; /* Example color for the tech electives section */
+}
+
+.resume-display h2 {
+    color: #0052f5; /* Example color for the resume display section */
+}

@@ -1,0 +1,239 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <div class="profile-header">
+        <h1 class="flashing-header"> Welcome to My Portfolio</h1>
+    </div>
+
+    <!-- Profile Image Section -->
+    <div class="profile-image">
+        <img src="{{ url_for('static', filename='images/Profile.jpg') }}" alt="Profile Image" class="profile-img">
+    </div>
+
+    <div class="social links">
+        <h2>Social Links</h2>
+        <a href="https://www.linkedin.com/in/janki-patel-3b9687222/" target="_blank">LinkedIn</a> | 
+        <a href="https://github.com/Jpatel114" target="_blank">GitHub</a>
+    </div>
+
+    <div class="profile-content">
+        <p>My name is Janki Patel, and I recently graduated with a Bachelor of Science in Computer Science from the University of Illinois at Chicago. With a solid foundation in programming languages such as Java, Python, and SQL, I have developed a keen interest in data analysis, machine learning, and software development. My technical skills are complemented by hands-on experience through internships and projects, including creating custom database applications and implementing decision tree algorithms for data classification.</p>
+
+        <p>I have honed my data analysis skills using tools like Tableau, Power BI, and libraries such as pandas and scikit-learn. My recent projects include analyzing retail store sales data to identify trends and developing interactive dashboards for visualization. Additionally, I have experience mentoring youth programs and supporting engineering students, which has strengthened my leadership and teaching abilities.</p>
+
+        <p>Outside of my professional pursuits, I am passionate about continuous learning and staying updated with the latest technological trends. In my free time, I enjoy hiking, reading tech blogs, and exploring new programming languages and frameworks. I am dedicated to using my skills to solve complex problems and contribute to innovative solutions.</p>
+    </div>
+
+    <!-- Tech Electives Section -->
+    <div class="tech-electives">
+        <h2>Technical Electives</h2>
+        <ul>
+            <li>
+                <strong>CS 412: Intro to Machine Learning</strong>
+                <p>This course provides an introduction to machine learning, covering algorithms, data preprocessing, and model evaluation techniques. It includes practical applications and hands-on projects to understand real-world machine learning problems.</p>
+            </li>
+            <li>
+                <strong>CS 418: Intro to Data Science</strong>
+                <p>This course introduces the fundamental concepts of data science, including data manipulation, visualization, and analysis. It covers tools and techniques used in data science, such as Python, pandas, and machine learning libraries.</p>
+            </li>
+            <li>
+                <strong>CS 415: Computer Vision</strong>
+                <p>This course explores the principles and techniques of computer vision, including image processing, feature extraction, and object recognition. Students learn to develop algorithms and applications for visual data interpretation.</p>
+            </li>
+            <li>
+                <strong>MCS 320: Intro to Symbolic Computation</strong>
+                <p>This course covers symbolic computation and its applications in mathematics and computer science. Topics include algebraic manipulation, symbolic integration, and solving equations using computer algebra systems.</p>
+            </li>
+            <li>
+                <strong>MCS 415: Programming Language Design</strong>
+                <p>This course examines the design and implementation of programming languages. It includes topics such as syntax, semantics, language paradigms, and compiler construction, with an emphasis on language design principles.</p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Certifications Section -->
+    <div class="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>
+                <strong>Foundations: Data, Data, Everywhere</strong>
+                <p><a href="https://www.coursera.org/account/accomplishments/verify/F7JV2CHLFZDD?utm_source=link&utm_medium=certificate&utm_content=cert_image&utm_campaign=sharing_cta&utm_product=course" target="_blank">View Certificate</a></p>
+            </li>
+            <li>
+                <strong>AWS S3 Basics</strong>
+                <p><a href="https://www.coursera.org/account/accomplishments/verify/2HDLS46QKAHM" target="_blank">View Certificate</a></p>
+            </li>
+        </ul>
+    </div>
+
+    <!-- Resume Display Section -->
+    <div class="resume-display">
+        <h2>My Resume</h2>
+        <iframe src="{{ url_for('static', filename='resume/Janki_Patel.pdf') }}" width="100%" height="600px"></iframe>
+    </div>
+</div>
+
+<!-- Scroll-to-Top Button -->
+<button id="scrollToTopBtn">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
+        <path fill="currentColor" d="M6 15l6-6 6 6"/>
+    </svg>
+</button>
+
+<style>
+    body {
+        background-color: #e8dbf5; /* Light pastel color */
+        background-image: 
+            radial-gradient(circle, rgba(255,255,255,0.1) 20%, transparent 20%, transparent 80%, rgba(255,255,255,0.1) 80%),
+            linear-gradient(45deg, #f5f5f5 25%, transparent 25%, transparent 50%, #f5f5f5 50%, #f5f5f5 75%, transparent 75%, transparent),
+            linear-gradient(135deg, #f5f5f5 25%, transparent 25%, transparent 50%, #f5f5f5 50%, #f5f5f5 75%, transparent 75%, transparent);
+        background-size: 50px 50px, 50px 50px, 50px 50px;
+        background-repeat: repeat;
+        background-attachment: fixed;
+        animation: backgroundAnimation 20s linear infinite; /* Slowed down animation */
+    }
+
+    @keyframes backgroundAnimation {
+        0% { background-position: 0 0; }
+        100% { background-position: 100% 100%; }
+    }
+
+    .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        font-family: Arial, sans-serif;
+        background-color: #f0dfeb;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+
+    .profile-header {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .social-links {
+        margin-top: 10px;
+        font-size: 2.5em;  /* Increase the font size */
+        font-weight: bold;  /* Make the text bold */
+        text-align: center; /* Center-align the links */
+    }
+
+    .social-links a {
+        color: #ff005d;
+        text-decoration: none;
+        margin: 0 15px; /* Increase the space between links */
+    }
+
+    .social-links a:hover {
+        text-decoration: underline;
+    }
+    .flashing-header {
+        animation: flash 2.5s infinite;
+    }
+
+    @keyframes flash {
+        0%, 100% { opacity: 1; }
+        50% { opacity: 0.2; }
+    }
+
+    .profile-image {
+        text-align: center;
+        margin-bottom: 30px;
+    }
+
+    .profile-img {
+        max-width: 250px; /* Adjusted size for larger image */
+        border-radius: 50%;
+    }
+
+    .profile-content p {
+        text-align: justify;
+        margin-bottom: 20px;
+    }
+
+    .tech-electives, .certifications {
+        margin-top: 40px;
+    }
+
+    .social-links h2, .tech-electives h2, .certifications h2{
+        text-align: center;
+        margin-bottom: 20px;
+        color: #450b87; /* Color for section titles */
+    }
+
+    .tech-electives ul, .certifications ul {
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .tech-electives li, .certifications li {
+        margin-bottom: 20px;
+    }
+
+    .resume-display {
+        text-align: center;
+        margin-top: 40px;
+    }
+
+    .resume-display h2 {
+        margin-bottom: 20px;
+        color: #450b87; /* Color for resume display section title */
+    }
+
+    iframe {
+        border: 1px solid #7f1717;
+        border-radius: 4px;
+    }
+
+    /* Scroll-to-Top Button */
+    #scrollToTopBtn {
+        display: none;
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        background-color: #ffffff;
+        color: #000000;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        text-align: center;
+        line-height: 60px;
+        cursor: pointer;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    #scrollToTopBtn svg {
+        vertical-align: center;
+        width: 24px;
+        height: 24px;
+        margin-top: 8px; /* Center the arrow vertically */
+    }
+
+    #scrollToTopBtn:hover {
+        background-color: #0056b3;
+        color: #ffffff;
+    }
+</style>
+
+<script>
+    // Show the button when scrolling down
+    window.onscroll = function() {
+        const button = document.getElementById('scrollToTopBtn');
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            button.style.display = 'block';
+        } else {
+            button.style.display = 'none';
+        }
+    };
+
+    // Smooth scroll to the top
+    document.getElementById('scrollToTopBtn').onclick = function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+    };
+</script>
+{% endblock %}

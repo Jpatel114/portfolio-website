@@ -1,0 +1,22 @@
+<!-- templates/in_progress.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In Progress Projects</title>
+</head>
+<body>
+    <h1>In Progress Projects</h1>
+    <ul>
+        {% for project in projects %}
+        <li>
+            <h2>{{ project.title }}</h2>
+            <p><strong>Date:</strong> {{ project.date }}</p>
+            <p><strong>Description:</strong> {{ project.description }}</p>
+            <p><strong>Link:</strong> <a href="#">{{ project.link }}</a></p>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
